@@ -3,11 +3,11 @@ import json
 import os
 
 def download_save(year, tract):
-    fpath = 'lodes/%s/%s.json' % (year, tract)
+    fpath = '%s/%s.json' % (year, tract)
     if os.path.exists(fpath):
         print 'found and opened %s' % fpath
         return json.load(open(fpath, 'rb'))
-    base_url = 'https://s3-us-west-2.amazonaws.com/census-lodes'
+    base_url = 'http://lit-headland-2727.herokuapp.com/'
     url = '%s/%s/%s.json' % (base_url, year, tract)
     r = requests.get(url)
     try:

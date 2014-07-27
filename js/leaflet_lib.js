@@ -126,7 +126,7 @@ var LeafletLib = {
       LeafletLib.map.panTo(LeafletLib.map._layers[LeafletLib.leaflet_tracts[tract_fips]]._latlngs[0]);
 
       $.ajax({
-        url: ("https://s3-us-west-2.amazonaws.com/census-lodes/2011/" + tract_fips + ".json"),
+        url: ("http://lit-headland-2727.herokuapp.com/2011/" + tract_fips + ".json"),
         type: 'GET',
         dataType: 'json',
         success: function (resp) {
@@ -167,15 +167,15 @@ var LeafletLib = {
       //console.log(tract_jenks_cutoffs);
 
       if (tract_jenks_cutoffs == null)
-        LeafletLib.updateLegend([], null, "No workers");
+        LeafletLib.updateLegend([], null, "No students");
       else {
         if (type == 'traveling-to') {
           $('#inbound-outbound').html("inbound");
-          LeafletLib.updateLegend(tract_jenks_cutoffs, LeafletLib.getColorTravelingTo, "Inbound workers");
+          LeafletLib.updateLegend(tract_jenks_cutoffs, LeafletLib.getColorTravelingTo, "Inbound students");
         }
         else {
           $('#inbound-outbound').html("outbound");
-          LeafletLib.updateLegend(tract_jenks_cutoffs, LeafletLib.getColorTravelingFrom, "Outbound workers");
+          LeafletLib.updateLegend(tract_jenks_cutoffs, LeafletLib.getColorTravelingFrom, "Outbound students");
         }
 
         $.each(tracts, function(index, value) {
@@ -186,11 +186,11 @@ var LeafletLib = {
               var layer = LeafletLib.map._layers[LeafletLib.leaflet_tracts[k]];
               if (type == 'traveling-to') {
                 layer.setStyle({fillColor: LeafletLib.getColorTravelingTo(v, tract_jenks_cutoffs)});
-                layer.bindLabel('Tract: ' + layer.feature.properties.tract_fips + "<br />Inbound workers: " + v);
+                layer.bindLabel('Tract: ' + layer.feature.properties.tract_fips + "<br />Inbound students: " + v);
               }
               else {
                 LeafletLib.map._layers[LeafletLib.leaflet_tracts[k]].setStyle({fillColor: LeafletLib.getColorTravelingFrom(v, tract_jenks_cutoffs)});
-                layer.bindLabel('Tract: ' + layer.feature.properties.tract_fips + "<br />Outbound workers: " + v);
+                layer.bindLabel('Tract: ' + layer.feature.properties.tract_fips + "<br />Outbound students: " + v);
               }
             }
           });

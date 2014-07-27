@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Where We Work</title>
+    <title>Mapping School Choice: Where Do Students Go to School?</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,8 +37,8 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Where We Work</a>
-          <span class='navbar-text'>A project by <a href='http://datamade.us'>DataMade</a> and <a href='http://dssg.io'>Data Science for Social Good</a></span>
+          <a class="navbar-brand" href="index.html">Where We Go to School</a>
+          <span class='navbar-text'>A project by <a href='http://dssg.io'>Data Science for Social Good</a></span>
         </div>
         <div class="collapse navbar-collapse pull-right">
           <ul class="nav navbar-nav">
@@ -55,19 +55,19 @@
         <div class='row'>
           <div class='col-md-4'>
             <div class='well'>
-              <h4>Where do Chicagoans live and work?</h4>
-              <p>Select an area on the map to find out where people commute to and from for work. <br /><a href='about.html'>Read more</a> &raquo;</p>
+              <h4>Where do Chicagoans go to school?</h4>
+              <p>Select an area on the map to find out where people go to and from school. <br /><a href='about.html'>Read more</a> &raquo;</p>
 
               <label class='radio-inline'>
                 <input type='radio' id='rbTravelingTo' checked='checked' name='rbType'/>
                 <span class='filter-box filter-inbound'></span>
-                Inbound workers
+                Inbound students
               </label>
               <br />
               <label class='radio-inline'>
                 <input type='radio' id='rbTravelingFrom' name='rbType'/>
                 <span class='filter-box filter-outbound'></span>
-                Outbound workers
+                Outbound students
               </label>
 
             </div>
@@ -87,13 +87,13 @@
                 <span id="selected-tract-id" style='color: #4A1486;'></span>
                 <small>(<a href='about.html#whats-a-census-tract'>what's a tract?</a>)</small>
               </h4>
-              <p><strong id='total-workers'></strong> <span id='inbound-outbound'></span> workers</p>
+              <p><strong id='total-workers'></strong> <span id='inbound-outbound'></span> students</p>
               <p><strong id='connect-tracts'></strong> connected tracts</p>
               <table class='table table-bordered' id='top-tracts'>
                 <thead>
                   <tr>
                     <th>Top 5 tracts</th>
-                    <th># workers</th>
+                    <th># students</th>
                   </tr>
                 </thead>
                 <tbody>
